@@ -26,10 +26,24 @@ const checkId = () => {
     }
 }
 
+const checkUnique = () => {
+    list.forEach(element => {
+        if (list.filter(x => x.id == element.id).length !== 1) {
+            throwList.push("Id unique failed (id: " + element.id.toString() + ")");
+        }
+        if (list.filter(x => x.title == element.title).length !== 1) {
+            throwList.push("Title unique failed (id: " + element.id.toString() + ")");
+        }
+        if (list.filter(x => x.code == element.code).length !== 1) {
+            throwList.push("Code unique failed (id: " + element.id.toString() + ")");
+        }
+    });
+}
 
 checkCode();
 checkTitle();
 checkId();
+checkUnique();
 
 if (throwList.length < 1) {
     console.log("Test Success.");
