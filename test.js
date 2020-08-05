@@ -38,5 +38,5 @@ if (throwList.length < 1) {
 else {
     console.log("Test Failed! (Fail: " + throwList.length.toString() + ")\n");
     console.log(throwList.join("\n"));
-    return 1;
+    throw new Error('Test Failed!');
 }
