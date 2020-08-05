@@ -40,10 +40,19 @@ const checkUnique = () => {
     });
 }
 
+const checkCodeLength = () => {
+    list.forEach(element => {
+        if (element.code.length !== 11) {
+            throwList.push("Code length failed (id: " + element.id.toString() + ")");
+        }
+    });
+}
+
 checkCode();
 checkTitle();
 checkId();
 checkUnique();
+checkCodeLength();
 
 if (throwList.length < 1) {
     console.log("Test Success.");
