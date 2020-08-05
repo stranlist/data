@@ -26,6 +26,7 @@ const checkId = () => {
     }
 }
 
+
 checkCode();
 checkTitle();
 checkId();
